@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Engergy and battery</title>
+</head>
+
+<body>
+    <script>
+        function Battery(engergy) {
+            this.engergy = engergy;
+
+            this.getEngergy = function () {
+                return this.engergy;
+            }
+            this.setEngergy = function () {
+                this.engergy = engergy;
+            }
+            this.decreaseEngery = function () {
+                if (this.engergy > 0) { engergy--; }
+            }
+        }
+        function FlashLamp() {
+            this.battery = battery;
+
+            this.getBattery = function () {
+                return this.battery.getEngergy();
+            }
+            this.light = function () {
+                if (this.status) {
+                    alert("Lighting");
+                } else {
+                    alert("not lighting");
+                }
+            }
+            this.turnOn = function () {
+                this.status = true;
+            }
+            this.turnOff = function () {
+                this.status = false;
+            }
+        }
+        var battery = new Battery(10);
+        var c = battery.setEngergy();
+        var flashLamp = new FlashLamp();
+        var b = flashLamp.getBattery();
+        document.write("Battery info:" + b + "<br/>");
+        flashLamp.light();
+        document.write("Turn on<br/>")
+        flashLamp.turnOn();
+        flashLamp.light();
+        document.write("Battery info:" + b + "<br/>");
+
+        document.write("Turn off<br/>")
+        flashLamp.turnOff();
+        flashLamp.light();
+    </script>
+</body>
+
+</html>

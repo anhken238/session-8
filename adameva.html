@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adam & Eva</title>
+</head>
+
+<body>
+    <input type="button" value="Eva" onclick="btneva()" ;>
+    <input type="button" value="Adam" onclick="btnadam()" ;>
+
+    <script>
+        function Apple(weight) {
+            this.weight = weight;
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+        function Human(name, gender, weightHuman) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman = weightHuman;
+
+            this.eatApple = function (apple) {
+                apple.weight --; 
+                weightHuman ++;
+            }
+            this.sayString = function () {
+                document.write("say..")
+            }
+            this.getName = function (name) {
+                return this.name;
+            }
+            this.gender = function (gender) {
+                return this.gender;
+            }
+            this.setWeight = function (weightHuman) {
+                this.weightHuman = weightHuman;
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>
