@@ -9,24 +9,38 @@
 </head>
 
 <body>
-    <input type="button" value="Eva" onclick="btneva()" ;>
-    <input type="button" value="Adam" onclick="btnadam()" ;>
-
+    <form>
+        <input type="button" value="Eva" onclick="btneva()" ;>
+        <input type="button" value="Adam" onclick="btnadam()" ;>
+        <div id="result"></div>
+    </form>
     <script>
         function Apple(weight) {
-            this.weight = weight;
+            this.weight = weight = 10;
             this.getWeight = function () {
                 return this.weight;
             }
+            this.decrease = function () {
+                weight -= 1;
+                if (weight > 0) {
+                    weight -= 1;
+                }
+                else{
+                    alert("Hết Táo");
+                }
+            }
         }
+
         function Human(name, gender, weightHuman) {
             this.name = name;
             this.gender = gender;
             this.weightHuman = weightHuman;
 
-            this.eatApple = function (apple) {
-                apple.weight --; 
-                weightHuman ++;
+            this.eatApple = function () {
+                if (this.weightHuman > 0 || this.Apple.weight() > 0) {
+                    weightHuman += 1;
+                }
+                return false;
             }
             this.sayString = function () {
                 document.write("say..")
@@ -34,15 +48,31 @@
             this.getName = function (name) {
                 return this.name;
             }
-            this.gender = function (gender) {
+            this.getGender = function (gender) {
                 return this.gender;
             }
-            this.setWeight = function (weightHuman) {
-                this.weightHuman = weightHuman;
+            this.getWeighthuman = function (weightHuman) {
+                return this.weightHuman;
             }
-            
-        }
 
+        }
+        let human1 = new Human("Adam", "Nam", 55);
+        let name1 = human1.getName();
+        let weightHuman1 = human1.getWeighthuman();
+
+        let human2 = new Human("Eva", "Nữ", 38);
+        let name2 = human2.getName();
+        let weightHuman2 = human2.getWeighthuman();
+
+        let decreaseApple = Apple.decrease( );
+        function btnadam() {
+            human1.eatApple();
+            document.getElementById("result").innerHTML = "tên" + name1 + " ăn hết " + decreaseApple + "<br>" + "Cân nặng  " + weightHuman1;
+        }
+        function btneva() {
+            human2.eatApple();
+            document.getElementById("result").innerHTML = "tên" + name2 + "ăn hết" + decreaseApple + "<br>" + "Cân nặng " + weightHuman2;
+        }
     </script>
 </body>
 
